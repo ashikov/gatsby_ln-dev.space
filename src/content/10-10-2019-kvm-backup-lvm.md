@@ -117,7 +117,7 @@ Domain kvmserv saved to /mnt/backups/kvmserv.vmstate
 > Размер __[COW-table](https://en.wikipedia.org/wiki/Copy-on-write) size__, который указывается в параметре __-L__ необходимо подбирать таким образом, чтобы значение __Allocated to snapshot__ (которое можно посмотреть, например, такой командой: __lvdisplay | grep "Allocated to snapshot"__) за время пока будет происходить архивация снепшота __НЕ__ достигло 100%. Если такое случится, то снепшот считается разрушенным и восстановиться из него не получится.
 
 ```shell
-root@serv-ub:~$ lvcreate -s -n kvmserv-a-1-lvm-disk-1_snap -L16G /dev/vg-libvirt/kvmserv-lvm-disk-1
+root@serv-ub:~$ lvcreate -s -n kvmserv-lvm-disk-1_snap -L16G /dev/vg-libvirt/kvmserv-lvm-disk-1
   Using default stripesize 64.00 KiB.
   Logical volume "kvmserv-lvm-disk-1_snap" created.
 ```
